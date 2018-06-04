@@ -18,10 +18,35 @@ body {
 .expense-list{
   margin-top: 10px;
 }
+.expense-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 20px;
+}
 .list{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+}
+.form-close-btn{
+  display: flex;
+  justify-content: flex-end;
+
+}
+.product-modal-btn{
+  display: flex;
+  justify-content: space-evenly;
+}
+.slider-value{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bold;
 }

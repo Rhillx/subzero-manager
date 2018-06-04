@@ -3,6 +3,8 @@ import{Card, CardHeader, CardText} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 
+import ProductListItem from './ProductListItem';
+
 
 
 
@@ -15,12 +17,9 @@ console.log(props)
                 title = "Product Inventory"
                 showExpandableButton = {true}
             />
-            <CardText expandable={true} expanded={props.expanded} >
+            <CardText expandable={true} >
                 <List>
-                <ListItem primaryText = "Banana Kush" secondaryText ="155"/>  
-                <Divider/>
-                <ListItem primaryText = "Sours" secondaryText ="344" />  
-                <Divider/>
+                    <ProductListItem/>
                 </List>
             </CardText>
 
