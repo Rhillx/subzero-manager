@@ -2,12 +2,8 @@ import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
 import Clear from 'material-ui/svg-icons/content/clear'
 
-const style = {
-  marginRight: 20,
-};
 
 
 const MenuDrawer = props => {
@@ -16,11 +12,11 @@ const MenuDrawer = props => {
             <Drawer open = {props.open} >
                 
                 <Clear onClick={props.toggle} />
-                <MenuItem>Expenses</MenuItem>
+                <MenuItem>Expense Report</MenuItem>
                 <Divider/>
-                <MenuItem>Material</MenuItem>
+                <MenuItem>Customer Log</MenuItem>
                 <Divider/>
-                <MenuItem>Inventory</MenuItem>
+                <MenuItem>Notes</MenuItem>
                 <Divider/>
                 <MenuItem>Batches</MenuItem>
 

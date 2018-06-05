@@ -50,3 +50,19 @@ body {
   font-size: 50px;
   font-weight: bold;
 }
+.price-modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.price-modal-btn{
+  padding: 25px;
+  margin-top: 10px;
+}
+.add-modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

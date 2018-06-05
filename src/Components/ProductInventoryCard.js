@@ -1,23 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
 import{Card, CardHeader, CardText} from 'material-ui/Card';
-import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
+import {List} from 'material-ui/List';
 
 import ProductListItem from './ProductListItem';
+import IconicMenu from './IconMenu';
 
 
 
 
-const ProductInventoryCard = props =>{
-console.log(props)
+class ProductInventoryCard extends Component {
+    state={
+        addModalIsOpen: false
+    }
+
+toggleAddModal =()=>{
+    if(!this.state.addModalIsOpen){
+        this.setState({addModalIsOpen: true})
+    } else{
+        this.setState({addModalIsOpen: false})
+    }
+}
+
+render(){
 
     return(
-        <Card  zDepth ={2}>
+        <Card zDepth ={2}>
+           
             <CardHeader
                 title = "Product Inventory"
                 showExpandableButton = {true}
             />
-            <CardText expandable={true} >
+         
+            <CardText expandable={true}>
+                <IconicMenu 
+                    menuOne='Add New Product' 
+                    menuTwo='Remove Product' 
+                    addModalStatus={this.state.addModalIsOpen}
+                    addModalAction={this.toggleAddModal}
+                />
                 <List>
                     <ProductListItem/>
                 </List>
@@ -26,6 +46,7 @@ console.log(props)
 
         </Card>
     )
+}
 }
 
 export default ProductInventoryCard;

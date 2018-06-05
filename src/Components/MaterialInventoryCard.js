@@ -1,17 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import{Card, CardHeader, CardText} from 'material-ui/Card';
-import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
+import {List} from 'material-ui/List';
+import IconicMenu from './IconMenu';
 
-import IconMenu from 'material-ui/IconMenu';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import MenuItem from 'material-ui/MenuItem';
-import IconButton from 'material-ui/IconButton';
+import MaterialListItem from './MaterialListItem';
 
 
+class MaterialInventoryCard extends Component {
+    state={
+        addModalIsOpen: false
+    }
 
-const MaterialInventoryCard = props =>{
+toggleAddModal =()=>{
+    if(!this.state.addModalIsOpen){
+        this.setState({addModalIsOpen: true})
+    } else{
+        this.setState({addModalIsOpen: false})
+    }
+}
 
+render(){
 
     return(
         <Card zDepth ={2}>
@@ -21,28 +29,22 @@ const MaterialInventoryCard = props =>{
                 showExpandableButton = {true}
             />
          
-            <CardText expandable={true} expanded={props.expanded}>
-            <div className ="icon-menu">
-            <IconMenu
-                iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-                anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-                targetOrigin={{horizontal: 'left', vertical: 'top'}}
-            >
-                <MenuItem primaryText="Add Item" />
-                <MenuItem primaryText="Remove Item" />
-            </IconMenu>
-            </div>
+            <CardText expandable={true}>
+                <IconicMenu 
+                    menuOne='Add Items' 
+                    menuTwo='Remove Items' 
+                    addModalStatus={this.state.addModalIsOpen}
+                    addModalAction={this.toggleAddModal}
+                />
                 <List>
-                <ListItem primaryText = "Carts" secondaryText ="155"/>  
-                <Divider/>
-                <ListItem primaryText = "Packaging" secondaryText ="344" />  
-                <Divider/>
+                    <MaterialListItem/>
                 </List>
             </CardText>
 
 
         </Card>
     )
+}
 }
 
 export default MaterialInventoryCard;

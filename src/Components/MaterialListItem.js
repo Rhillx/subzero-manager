@@ -3,16 +3,14 @@ import {ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 
 import InventoryModal from './InventoryModal';
-import PriceSoldModal from './PriceSoldModal';
 
 
 
 
-class ProductListItem extends Component{
+class MaterialListItem extends Component{
         state ={
             sliderValue: 0,
             modalIsOpen: false,
-            priceModalIsOpen: false,
 
         }
 
@@ -26,27 +24,19 @@ class ProductListItem extends Component{
                 this.setState({modalIsOpen: false})
             }
         }
-        togglePriceModal = () =>{
-            if(!this.state.priceModalIsOpen){
-                this.setState({priceModalIsOpen: true})
-            } else{
-                this.setState({priceModalIsOpen: false})
-            }
-        }
     render(){
         return(
             <div>
-                <ListItem primaryText = "Banana Kush" secondaryText ="155" onClick={this.toggleModal}/>  
+                <ListItem primaryText = "Carts" secondaryText ="155" onClick={this.toggleModal}/>  
                 <InventoryModal 
                     sliderValue={this.state.sliderValue} 
                     onChange={this.handleSlideChange}
                     toggle={this.toggleModal}
                     open={this.state.modalIsOpen}
-                    max={1000}
-                    sellBtn="Sold"
-                    sellBtnAction={this.togglePriceModal}
+                    max={5000}
+                    stockBtn="Stock"
+                    sellBtn="Used"
                 />
-                <PriceSoldModal open={this.state.priceModalIsOpen} onClick={this.togglePriceModal}/>
                 <Divider/>
             </div>
 
@@ -55,4 +45,4 @@ class ProductListItem extends Component{
 }
 
 
-export default ProductListItem;
+export default MaterialListItem;

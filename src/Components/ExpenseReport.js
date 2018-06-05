@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
+import {List} from 'material-ui/List';
 import Add from 'material-ui/svg-icons/content/add';
 
 import AppBar from 'material-ui/AppBar';
