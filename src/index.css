@@ -69,3 +69,6 @@ body {
 .menu-text{
   text-decoration-line: none !important;
 }
+.drawer-item{
+  margin: 15px 10px;
+}

@@ -1,7 +1,5 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import Divider from 'material-ui/Divider';
 import Clear from 'material-ui/svg-icons/content/clear'
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router-dom';
@@ -13,19 +11,43 @@ const MenuDrawer = props => {
             <Drawer open = {props.open} >
                 
                 <Clear onClick={props.toggle} />
-    
-                <Link to="/expense">
-                    <RaisedButton fullWidth={true}>
-                        Expense Report
-                    </RaisedButton>
-                </Link>
+                <div className="drawer-item">
+                    <Link to="/">
+                        <RaisedButton fullWidth={true}>
+                            Home
+                        </RaisedButton>
+                    </Link>
+                </div>
+
+                <div className="drawer-item">
+                    <Link to="/expense">
+                        <RaisedButton fullWidth={true}>
+                            Expense Report
+                        </RaisedButton>
+                    </Link>
+                </div>
             
-                <Divider/>
-                <MenuItem>Customer Log</MenuItem>
-                <Divider/>
-                <MenuItem>Notes</MenuItem>
-                <Divider/>
-                <MenuItem>Batches</MenuItem>
+                <div className="drawer-item">
+                    <Link to="/customer-log">
+                        <RaisedButton fullWidth={true}>
+                            Customer Log
+                        </RaisedButton>
+                    </Link>
+                </div>
+                <div className="drawer-item">
+                    <Link to="/batches">
+                        <RaisedButton fullWidth={true}>
+                            Batches
+                        </RaisedButton>
+                    </Link>
+                </div>
+                <div className="drawer-item">
+                    <Link to="/notes">
+                        <RaisedButton fullWidth={true}>
+                            Notes
+                        </RaisedButton>
+                    </Link>
+                </div>
 
             </Drawer>
         )

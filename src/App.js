@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MainScreen from './Components/MainScreen';
 import ExpenseReport from './Components/ExpenseReport';
+import CustomerLog from './Components/CustomerLog';
+import BatchList from './Components/BatchList';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
@@ -32,6 +34,10 @@ class App extends Component {
           <div>
             <Route path="/" exact strict component={MainScreen}/>
             <Route path="/expense" component={ExpenseReport}/>
+            <Route path="/customer-log" component={CustomerLog}/>
+            <Route path="/batches" component={BatchList}/>
+            
+            
           </div>
         </Router>
       </MuiThemeProvider>
